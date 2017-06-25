@@ -2,6 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="MSSmartTagsPreventParsing" content="TRUE" />
     <title>{{ title }} - Administration AFUP</title>
 
@@ -18,7 +20,7 @@
     <script type="text/javascript" src="{{ asset('javascript/tinymce.js') }}"></script>
 </head>
 
-<body id="{{ page|default('') }}" class="{{ class|default('') }}">
+<body id="{{ page|default('') }}" class="{{ class|default('') }} main--body" >
 {% block body '' %}
 </body>
 </html>

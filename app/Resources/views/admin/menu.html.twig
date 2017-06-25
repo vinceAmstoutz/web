@@ -1,9 +1,12 @@
+<a href="#menu" class="nav-button-open" aria-label="open navigation"></a>
+<a href="#" class="nav-button-close" aria-label="close navigation"></a>
 <ul id="menu">
     {% for clef, page in pages %}
         {% if page.elements is defined %}
             {% if page.niveau is not defined or is_granted(page.niveau) %}
-                <li>
-                    <span>{{ page.nom }}</span>
+                <li id="menu_{{ clef }}">
+                    <a href="#" class="menu--close">-</a>
+                    <span><a href="#menu_{{ clef }}">{{ page.nom }}</a></span>
                     <ul>
                         {% for clef2, element in page.elements %}
                             {% if element.niveau is not defined or is_granted(element.niveau) %}

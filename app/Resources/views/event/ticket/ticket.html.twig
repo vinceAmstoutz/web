@@ -44,7 +44,9 @@
         <div class="tickets--members-detail">
             {% if app.user %}
                 {% if app.user.companyId > 0 %}
-                    <p>{{ 'Vous êtes connecté avec un compte AFUP d\'entreprise. Pour acheter des places au tarif AFUP, celles-ci doivent être enregistrées pour les membres de votre adhésion.'|trans }}</p>
+                    <p>{{ "Vous êtes connecté avec un compte AFUP d'entreprise. Pour acheter des places au tarif AFUP, celles-ci doivent être enregistrées pour les membres de votre adhésion."|trans }}</p>
+                    <p>{{ 'Pour vérifier quels membres sont actuellement connus par votre entreprise, rendez-vous sur la rubrique <a href="%link%">Membres rattachés</a>.'|trans({'%link%': url('admin_company_members')})|raw }}</p>
+                    <p>{{ "Les membres bénéficiant d'une cotisation personnelle doivent être connectés avec leur compte AFUP pour pouvoir commander une place au tarif membre."|trans }}</p>
                 {% else %}
                     <p>{{ 'Vous êtes connecté avec un compte AFUP personnel. Vous pouvez acheter une place au tarif membre pour vous seul.'|trans }}</p>
                 {% endif %}
