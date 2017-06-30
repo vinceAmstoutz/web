@@ -1,0 +1,7 @@
+program:
+  path: /program
+  defaults: {_controller: AppBundle:Pwa:Program}
+
+location:
+  path: /location
+  defaults: {_controller: AppBundle:Pwa:location}

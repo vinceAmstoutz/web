@@ -21,3 +21,7 @@ talks:
 blog:
     resource: "routing/blog.yml"
     prefix: /blog
+
+pwa:
+    resource: 'routing/event_pwa.yml'
+    prefix: /pwatest

@@ -8,10 +8,11 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="shared-styles.html">
 
-<dom-module id="my-view3">
+<dom-module id="my-view1">
   <template>
     <style include="shared-styles">
       :host {
@@ -21,19 +22,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <div class="card">
-      <div class="circle">3</div>
-      <h1>View Three</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-    </div>
+    <h1>Programme du 1er jour</h1>
+    <iron-ajax auto url="/event/program" handle-as="json" last-response="{{ajaxResponse}}"></iron-ajax>
+    <template is="dom-repeat" items="[[ajaxResponse.talks]]">
+      <div class="card">
+        <h2>{{item.title}}</h2>
+        <span>{{item.startHour}} - {{item.endHour}}</span>
+        <p>{{item.abstract}}</p>
+      </div>
+    </template>
   </template>
 
   <script>
-    class MyView3 extends Polymer.Element {
-      static get is() { return 'my-view3'; }
+    class MyView1 extends Polymer.Element {
+      static get is() { return 'my-view1'; }
     }
 
-    window.customElements.define(MyView3.is, MyView3);
+    window.customElements.define(MyView1.is, MyView1);
   </script>
 </dom-module>

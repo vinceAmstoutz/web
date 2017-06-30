@@ -1,20 +1,19 @@
 {
   "entrypoint": "htdocs/pwa/index.html",
-  "shell": "src/my-app.html",
+  "shell": "htdocs/pwa/src/my-app.html",
   "fragments": [
-    "src/my-view1.html",
-    "src/my-view2.html",
-    "src/my-view3.html",
-    "src/my-view404.html"
+    "htdocs/pwa/src/my-view1.html",
+    "htdocs/pwa/src/my-view2.html",
+    "htdocs/pwa/src/my-view404.html"
   ],
   "sources": [
-    "src/**/*",
+    "htdocs/pwa/src/**/*",
     "images/**/*",
     "bower.json"
   ],
   "extraDependencies": [
-    "manifest.json",
-    "bower_components/webcomponentsjs/*.js"
+    "htdocs/pwa/manifest.json",
+    "htdocs/bower_components/webcomponentsjs/*.js"
   ],
   "lint": {
     "rules": ["polymer-2"]

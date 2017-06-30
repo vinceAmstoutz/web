@@ -42,4 +42,7 @@ RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [END]
 
 ## This url are handled by symfony
-RewriteRule (event|connect|_|association|talks|blog|admin/)/? /app.php [END]
+RewriteRule (event|connect|_|association|talks|blog|admin/|pwatest)/? /app.php [END]
+
+## This url are handled by the PWA
+RewriteRule ^pwa/[^\.]+$ /pwa/index.html [END]
